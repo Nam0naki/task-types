@@ -1,10 +1,23 @@
+export type Gender = 'male' | 'female';
+
+export interface User {
+  name: string;
+  age: number;
+  gender: Gender;
+}
+
+export interface Employee extends User {
+  company: string;
+}
+
+export type Person = User | Employee;
 /*
 Типизируйте функцию getPersons, возвращающую массив объектов со следующими свойствами:
 - name - строка
 - age - число
 - gender - 'male' или 'female'
  */
-export function getPersons();
+export function getPersons(): User[];
 
 /*
 Типизируйте функцию personToString, возвращающую строку и принимающую объект одного из следующих форматов:
@@ -18,4 +31,4 @@ export function getPersons();
    - gender - 'male' или 'female'
    - company- строка
  */
-export function personToString(person);
+export declare function personToString(person: Person): string;
